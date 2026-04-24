@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 320px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .header h3 img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+        }
+
+        .count-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .count {
+            font-size: 64px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        .count-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .meta {
+            font-size: 11px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-test {
+            background: #4caf50;
+            color: white;
+            margin-top: 8px;
+        }
+
+        .btn-test:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .settings {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .setting-item label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .volume-slider {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 10px;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h3><img src="icons/icon48.png" alt="Gmailer"> Gmailer</h3>
+            <p>Stay connected with style</p>
+        </div>
+
+        <div class="count-card">
+            <div class="count" id="count">-</div>
+            <div class="count-label">Unread emails</div>
+            <div class="meta" id="last-checked"></div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-primary" id="openGmailBtn">Open Gmail</button>
+            <button class="btn-secondary" id="refreshBtn">Refresh</button>
+        </div>
+
+        <!-- <button class="btn-test" id="testSoundBtn">Test Sound</button> -->
+
+        <div class="settings">
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="soundToggle" checked>
+                    Play Sound
+                </label>
+                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="70">
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="desktopNotifications" checked>
+                    Desktop Notifications
+                </label>
+            </div>
+        </div>
+
+        <div class="footer">
+            Auto-checks every minute after authorization
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

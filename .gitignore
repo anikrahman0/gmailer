@@ -1,0 +1,6 @@
+# Ignore local extension config
+manifest.json
+
+# OS files
+.DS_Store
+Thumbs.db
