@@ -1,6 +1,6 @@
 # Gmailer
 
-<p align="center">
+<p>
   <img src="icons/icon128.png" alt="Gmailer icon" width="128">
 </p>
 
